@@ -52,7 +52,6 @@ def style_base_layout():
                     font-size:2rem !important;
                     line-height:1.1 !important;
                     margin-bottom:0rem !important;
-                    color:black !important;
                 }
 
                 h3,h4,p {
@@ -69,7 +68,7 @@ def style_base_layout():
                     transition:transform 0.25s ease-in-out !important;
                 }
 
-                button[kind="Secondary"]{
+                button[kind="secondary"]{
                     background: #EB459E !important;
                     border-radius:1.5rem !important;
                     color:white !important;
@@ -78,7 +77,7 @@ def style_base_layout():
                     transition:transform 0.25s ease-in-out !important;
                 }
 
-                button[kind="Tertiary"]{
+                button[kind="tertiary"]{
                     background: black !important;
                     border-radius:1.5rem !important;
                     color:white !important;
