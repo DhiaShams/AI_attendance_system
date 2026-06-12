@@ -30,14 +30,36 @@ def teacher_screen():
             st.session_state['login_type'] = None
             st.rerun()
 
-    if 'teacher_login_type' not in st.session_state or st.session_state.teacher_login_type=="login":
+    if "teacher_data" in st.session_state:
+        teacher_dashboard()
+    elif 'teacher_login_type' not in st.session_state or st.session_state.teacher_login_type=="login":
         teacher_screen_login()
     elif st.session_state.teacher_login_type=="register":
         teacher_screen_register()
 
+def teacher_dashboard():
+    teacher_data=st.session_state.teacher_data
+
+    st.header(
+        f"""
+            Welcome,{teacher_data['name']}
+    """)
+
+def login_tr(tr_username,tr_pwd):
+    if not tr_username or not tr_pwd:
+        return False
+    
+    teacher=teacher_login(tr_username,tr_pwd)
+
+    if teacher:
+        st.session_state.user_role='teacher'
+        st.session_state.teacher_data=teacher
+        st.session_state.is_logged_in=True
+        return True
+
 def teacher_screen_login():
     
-    st.header('Login using password')
+    st.header('Login using password',text_alignment='center')
     
     st.space()
     st.space()
@@ -51,7 +73,7 @@ def teacher_screen_login():
 
     with btn1:
         if st.button('Login Now',icon=':material/passkey:',shortcut='control+enter',width='stretch'):
-            if teacher_login(tr_username,tr_pwd):
+            if login_tr(tr_username,tr_pwd):
                 st.toast("Welcome back!",icon="👋")
                 import time
                 time.sleep(2)
@@ -65,7 +87,7 @@ def teacher_screen_login():
 
 def teacher_screen_register():
     
-    st.header('Register your teacher profile')
+    st.header('Register your teacher profile',text_alignment='center')
     
     st.space()
     st.space()
