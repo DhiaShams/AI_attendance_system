@@ -16,3 +16,6 @@ segno   #qr code
 pillow  #img pre processing
 
 streamlit   #frontend
+
+librosa
+resemblyzer
