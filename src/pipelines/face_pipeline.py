@@ -102,4 +102,4 @@ def predict_attendance(class_image_np):
         if best_match_score<=resemblance_threshold:
             detected_students[predicted_id]=True
 
-    return    detected_students,all_students,len(en)
+    return    detected_students,all_students,len(encodings)
