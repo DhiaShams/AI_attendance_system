@@ -1,3 +1,6 @@
+
+streamlit   #frontend
+
 #utilities
 numpy
 pandas
@@ -15,7 +18,6 @@ bcrypt #hashing
 segno   #qr code
 pillow  #img pre processing
 
-streamlit   #frontend
 
 librosa
 resemblyzer
